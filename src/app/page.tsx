@@ -366,7 +366,12 @@ export default function GlampingReservations() {
                       </Button>
                     </PopoverTrigger>
                     <PopoverContent className="w-auto p-0" align="start">
-                      <Calendar mode="single" selected={checkIn} onSelect={setCheckIn} initialFocus />
+                      <Calendar 
+                        value={checkIn}
+                        onChange={(date) => setCheckIn(date as Date)}
+                        minDate={new Date()}
+                        className="rounded-lg border-none bg-white"
+                      />
                     </PopoverContent>
                   </Popover>
                 </div>
@@ -386,7 +391,12 @@ export default function GlampingReservations() {
                       </Button>
                     </PopoverTrigger>
                     <PopoverContent className="w-auto p-0" align="start">
-                      <Calendar mode="single" selected={checkOut} onSelect={setCheckOut} initialFocus />
+                      <Calendar 
+                        value={checkOut}
+                        onChange={(date) => setCheckOut(date as Date)}
+                        minDate={checkIn || new Date()}
+                        className="rounded-lg border-none bg-white"
+                      />
                     </PopoverContent>
                   </Popover>
                 </div>
