@@ -4,7 +4,7 @@ import * as React from "react"
 import { useRef, useCallback } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { CalendarIcon, Clock as ClockIcon } from "lucide-react"
+import { CalendarIcon, Clock as ClockIcon, MapPin as MapPinIcon, Car as CarIcon } from "lucide-react"
 import { format } from "date-fns"
 import { es } from "date-fns/locale"
 import {
@@ -180,7 +180,43 @@ export default function GlampingReservations() {
             </div>
           </div>
         </section>
-        <section ref={actividadesRef} className="w-full py-24 bg-white">
+        <section className="w-full py-24 bg-white">
+          <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12">Ubicación</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+              <div className="space-y-4">
+                <h3 className="text-2xl font-semibold">Eco Glamping Valle del Elqui</h3>
+                <p className="text-gray-600">
+                  Camino Público s/n, Pisco Elqui<br />
+                  Paihuano, Región de Coquimbo<br />
+                  Chile
+                </p>
+                <div className="space-y-2">
+                  <p className="flex items-center text-gray-600">
+                    <MapPinIcon className="h-5 w-5 mr-2 text-orange-500" />
+                    A 5 minutos del centro de Pisco Elqui
+                  </p>
+                  <p className="flex items-center text-gray-600">
+                    <CarIcon className="h-5 w-5 mr-2 text-orange-500" />
+                    Estacionamiento gratuito disponible
+                  </p>
+                </div>
+              </div>
+              <div className="aspect-video rounded-xl overflow-hidden">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13645.505545396436!2d-70.49547221231385!3d-30.122843040천!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x96910c4b7b3e1d25%3A0x7c6b2eef0e8f98f3!2sPisco%20Elqui%2C%20Paihuano%2C%20Coquimbo!5e0!3m2!1ses!2scl!4v1710367144099!5m2!1ses!2scl"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section ref={actividadesRef} className="w-full py-24 bg-gray-100">
           <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12">Actividades</h2>
             <p className="text-gray-500 text-center max-w-[800px] mx-auto mb-12">
@@ -324,9 +360,11 @@ export default function GlampingReservations() {
             </div>
           </div>
         </section>
-        <section id="reserva" ref={reservaRef} className="w-full py-24 bg-gray-100">
+        <section className="w-full py-24 bg-white">
           <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12">Reserva tu Estancia</h2>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12">
+              Reserva tu Estancia
+            </h2>
             <form className="max-w-md mx-auto space-y-4" onSubmit={handleSubmit}>
               <div className="space-y-2">
                 <Label htmlFor="name">Nombre completo</Label>
