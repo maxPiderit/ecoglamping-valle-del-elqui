@@ -163,7 +163,7 @@ export default function GlampingReservations() {
                 </CardHeader>
                 <CardContent>
                   <Image
-                    src="/dos-camas-individuales.jpeg"
+                    src="/carpacompartida.jpeg"
                     alt="Carpa Compartida"
                     width={400}
                     height={300}
